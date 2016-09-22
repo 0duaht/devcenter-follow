@@ -6,19 +6,9 @@ class FollowWorker
 
     OauthAccount.where(provider: 'github')
                 .merge(OauthAccount.where.not(id: oauth_id))
-                .pluck(:username, :oauth_token)
-                .each do |username, token|
-      begin
-        Github::Client::Users::Followers.new(
-          oauth_token: token
-        ).follow current_account.username
-      rescue
-        next
-      end
-
-      Github::Client::Users::Followers.new(
-        oauth_token: current_account.oauth_token
-      ).follow username
+                .each do |oauth_account|
+      next unless oauth_account.follow current_account
+      current_account.follow oauth_account
     end
   end
 end

@@ -27,3 +27,26 @@
   justify-content: center;
   align-items: center;
 } 
+
+table {
+  color: #333;
+  font-family: Helvetica, Arial, sans-serif;
+  width: 640px;
+  border-collapse:
+  collapse; border-spacing: 0;
+}
+
+td, th {
+  border: 1px solid transparent; 
+  height: 30px;
+  transition: all 0.3s; 
+}
+
+th {
+  background: #DFDFDF; 
+  font-weight: bold;
+}
+
+td {
+  background: #FAFAFA;
+}
