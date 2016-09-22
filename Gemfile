@@ -45,6 +45,10 @@ group :development do
   gem 'spring'
 end
 
+group :production do
+  gem 'unicorn'
+end
+
 gem 'omniauth-github'
 gem 'sidekiq'
 gem 'github_api'
