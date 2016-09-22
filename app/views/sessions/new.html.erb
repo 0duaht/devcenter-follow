@@ -1,2 +1,8 @@
-<h2>Total Users: <%= User.count %></h2>
-<%= link_to "Github Login", "/auth/github" %>
+<div class="center-container">
+  <div class='row'><h2>Total Users: <%= User.count %></h2></div>
+  <div class='row'>
+    <a href="/auth/github" class="btn btn-social btn-github">
+      <span class="fa fa-github"></span> Sign in with Github
+    </a>
+  </div>
+</div>
