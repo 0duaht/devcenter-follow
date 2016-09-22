@@ -46,3 +46,5 @@ group :development do
 end
 
 gem 'omniauth-github'
+gem 'sidekiq'
+gem 'github_api'
