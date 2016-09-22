@@ -5,14 +5,10 @@
       <th>Date Signed on</th>
     </thead>
     <tbody>
-      <tr>
-        <td>flaksjfasf</td>
-        <td>lakdfjalsfkjafdj</td>
-      </tr>
       <% OauthAccount.all.each do |account| %>
         <tr>
           <td>
-            <%= link_to account.username, account.username %>
+            <%= link_to account.github_link, account.github_link %>
           </td>
           <td>
             <%= distance_of_time_in_words(Time.now, account.created_at) %>

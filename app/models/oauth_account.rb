@@ -19,8 +19,4 @@ class OauthAccount < ActiveRecord::Base
   def github_link
     "https://github.com/#{username}"
   end
-
-  def time_distance
-
-  end
 end
