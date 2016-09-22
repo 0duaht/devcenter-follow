@@ -11,13 +11,13 @@ class SessionsController < ApplicationController
     }, status: 400
   end
 
-  def github
+  def create
     oauth_user = OauthUser.new(request.env['omniauth.auth'])
     @user = oauth_user.login_or_create
     return start_follow_process if @user
 
     render json: {
-      message: 'Failed to authenticate.'
+      message: 'Failed. Please try again'
     }, status: 400
   end
 
